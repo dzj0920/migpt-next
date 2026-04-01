@@ -2,7 +2,7 @@
  * @type {import('@mi-gpt/next').MiGPTConfig}
  */
 export default {
-  debug: false, // 是否开启调试模式
+  debug: true, // 是否开启调试模式
   speaker: {
     /**
      * 小爱音箱在米家中设置的名称
@@ -72,33 +72,16 @@ export default {
   /**
    * 自定义消息回复
    */
-  async onMessage(engine, { text }) {
-    if (text === '测试播放文字') {
-      return { text: '你好，很高兴认识你！' };
-    }
-
-    if (text === '测试播放音乐') {
-      return { url: 'https://example.com/hello.mp3' };
-    }
-
-    if (text === '测试其他能力') {
-      // 打断原来小爱的回复
-      await engine.speaker.abortXiaoAI();
-
-      // 播放文字
-      await engine.speaker.play({ text: '你好' });
-
-      // 播放音频链接
-      await engine.speaker.play({ url: 'https://example.com/hello.mp3' });
-
-      // 调用 MiNA 的能力
-      await engine.MiNA.setVolume(50); // 音量调到 50%
-
-      // 调用 MioT 的能力（请到 https://home.miot-spec.com 查询指令列表）
-      await engine.MiOT.doAction(2, 1, 50); // 音量调到 50%
-
-      // 告诉 MiGPT 已经处理过这条消息了，不再使用默认的 AI 回复
-      return { handled: true };
-    }
-  },
+  async onMessage(engine, msg) {
+  if (engine.config.callAIKeywords.some((e) => msg.text.startsWith(e))) {
+    // 打断原来小爱的回复
+    await engine.speaker.abortXiaoAI();
+    // 调用 AI 回答
+    const { text } = await engine.askAI(msg);
+    console.log(`🔊 ${text}`);
+    // TTS 播放文字
+    await engine.MiOT.doAction(5, 3, text); // 👈 注意把 5,1 换成你的设备 ttsCommand
+    return { handled: true };
+  }
+},
 };
