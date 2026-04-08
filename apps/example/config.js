@@ -2,7 +2,7 @@
  * @type {import('@mi-gpt/next').MiGPTConfig}
  */
 export default {
-  debug: true, // 是否开启调试模式
+  debug: false, // 是否开启调试模式
   speaker: {
     /**
      * 小爱音箱在米家中设置的名称
