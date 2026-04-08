@@ -27,7 +27,7 @@ export default {
      *
      * 获取教程：https://github.com/idootop/migpt-next/issues/4
      */
-    passToken: 'V1:pwROAesIuzMBPe5slLSsQnUb2DpHBc+t6DtAMHLpye9bq66oUqU42OclC/Vx0WLuaKSnZYKK+Urck/q3kgc7Sfh7ZAGYa5xD5rdZ8MjtoOoungWx9BCfJQvgzl0f0UX0mB7IZS5yz4sSIT+FW+fW+1rH0VW+ekDuqgAFwkXcueFpswGgV1d9gy/+Kl0Jtum7+6gZJixIOUwq92SNffXmpj7t65bT8q1V4vvTfaHNKbAT6xysQL3t4m5PwU01KAd7Dhg63nsJMt4FGbG6juI9CQ3XSkBHLk0oEkzybJ7zU7J7JHIMrGZezfhz4MYq88oTQ6Dus86pqdvyMj4BSsDm1g==',
+    passToken: 'V1:DXmurwq2/R1BHTELu6obCeaM3tYc5QhrZ+iAlJxjkrSMzwH7Pn8rTJW99Kcoo7ofIlRSAZI4ao8YNFB+zCLDzN0AZG4k3AiY6Tx3Mhw24Ec6U/QZs+qlEZzHKsAgyjDLOTASwbIGIFe0qsM4TjCwekZGjWhCKR7nhcsQ79rYqBKlgzmamjcE6Rqy36+FEXoBKHFI+kzIEz8mlL5rm/0BD/rgNyl1yaBmU/KnCAEMF0L/L3x3XDYF+GFLag5/k5XC6cVSpXSvoBH20J52u6Lz6oCnRYenq1vWdIAtK2P48RDmDaPHI+hFOZHW/lqZE9xU/JjasCkdb47SVxf0COAq7fP2Y79DIBcvqpnU+gy4AhHATtI6+tkm3Kv+QKTKRbJq',
   },
   openai: {
     /**
